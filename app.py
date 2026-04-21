@@ -10,7 +10,7 @@ app = Flask(__name__)
 # CONFIGURATION
 # ============================================
 API_ID = int(os.environ.get('API_ID', '31968824'))
-API_HASH = os.environ.get('API_HASH', 'd9847a6694b961248f4052d16b89b912'))
+API_HASH = os.environ.get('API_HASH', 'd9847a6694b961248f4052d16b89b912')
 SESSION_STRING = os.environ.get('SESSION_STRING', '')
 
 # Create new event loop
@@ -26,10 +26,22 @@ client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH, loop=lo
 @app.route('/')
 def home():
     return """
-    <h1 style='color:#0ff;background:#000;text-align:center;padding:50px;'>
-    🆔 BRONX ULTRA API ✅<br>
-    <small style='color:#888;'>/chatid?username=USERNAME</small>
-    </h1>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>BRONX ULTRA API</title>
+        <style>
+            body { background: #000; color: #0ff; font-family: monospace; text-align: center; padding: 50px; }
+            code { background: #111; padding: 10px; color: #fa0; border-radius: 5px; }
+        </style>
+    </head>
+    <body>
+        <h1>🆔 BRONX ULTRA API</h1>
+        <h3>✅ ONLINE</h3>
+        <code>GET /chatid?username=USERNAME</code>
+        <p style="color:#555; margin-top:30px;">@BRONX_ULTRA</p>
+    </body>
+    </html>
     """
 
 @app.route('/chatid')
@@ -37,26 +49,49 @@ def chatid():
     username = request.args.get('username', '').strip()
     
     if not username:
-        return jsonify({"status":"error","message":"Missing username","credit":"@BRONX_ULTRA"}), 400
+        return jsonify({
+            "status": "error",
+            "message": "Missing username",
+            "credit": "@BRONX_ULTRA"
+        }), 400
     
     async def get():
         await client.connect()
-        e = await client.get_entity(username.replace("@", ""))
-        return {
+        clean = username.replace("@", "")
+        e = await client.get_entity(f"@{clean}")
+        
+        result = {
             "status": "success",
             "chat_id": e.id,
-            "username": getattr(e, 'username', username),
-            "type": "user" if not hasattr(e,'broadcast') else "channel",
-            "name": getattr(e, 'first_name', getattr(e, 'title', '')),
+            "username": getattr(e, 'username', clean),
             "credit": "@BRONX_ULTRA"
         }
+        
+        if hasattr(e, 'broadcast') and e.broadcast:
+            result["type"] = "channel"
+            result["title"] = getattr(e, 'title', '')
+        elif hasattr(e, 'title'):
+            result["type"] = "group"
+            result["title"] = e.title
+        else:
+            result["type"] = "user"
+            result["first_name"] = getattr(e, 'first_name', '')
+        
+        return result
     
-    result = loop.run_until_complete(get())
-    return jsonify(result)
+    try:
+        result = loop.run_until_complete(get())
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": str(e),
+            "credit": "@BRONX_ULTRA"
+        }), 404
 
 @app.route('/health')
 def health():
-    return jsonify({"status":"ok"})
+    return jsonify({"status": "ok", "credit": "@BRONX_ULTRA"})
 
 # ============================================
 # MAIN
