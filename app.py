@@ -9,9 +9,9 @@ app = Flask(__name__)
 # ============================================
 # CONFIGURATION
 # ============================================
-API_ID = int(os.environ.get('API_ID', '31968824'))
-API_HASH = os.environ.get('API_HASH', 'd9847a6694b961248f4052d16b89b912')
-SESSION_STRING = os.environ.get('SESSION_STRING', '')
+API_ID = int(os.environ.get('API_ID', '36879151'))
+API_HASH = os.environ.get('API_HASH', '45360a236343352099ffa29570f48700')
+SESSION_STRING = os.environ.get('SESSION_STRING', '1BVtsOMMBu7v0Z4l4crbseaz_Jk5pbPQmvIxIPA8YwD04nSQotIPK-unFuWFDu18gEFS3BS-MJFe_V6a3SyoI22fnfLpOr5tHStDXpXeUk5gmsuIsa6U47lTj4aaj_f0k-yxj9ZO28Rluf89rvLBLZCUXg4mFdJQj1NdBdCkszNqWwLi569ouj4bZsZzlXSzIg2NNUHK2QL1nxLUj0xCDKcmg3oyEUy2gP4UCCQgRte8VwUQSEkEUhrHwWTijibAPVl0MJquDqaoiw2G4eYXwlXB4l7YzW207px8longAIoynFVHAqEzf6MJj8HH06iG5iuZe7D8DXPp0FeUjvrky-UdPa9kGTm4=')
 
 # Create new event loop
 loop = asyncio.new_event_loop()
