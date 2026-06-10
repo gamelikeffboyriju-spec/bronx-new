@@ -11,7 +11,7 @@ app = Flask(__name__)
 # ============================================
 API_ID = int(os.environ.get('API_ID', '36879151'))
 API_HASH = os.environ.get('API_HASH', '45360a236343352099ffa29570f48700')
-SESSION_STRING = os.environ.get('SESSION_STRING', '1BVtsOMMBu7v0Z4l4crbseaz_Jk5pbPQmvIxIPA8YwD04nSQotIPK-unFuWFDu18gEFS3BS-MJFe_V6a3SyoI22fnfLpOr5tHStDXpXeUk5gmsuIsa6U47lTj4aaj_f0k-yxj9ZO28Rluf89rvLBLZCUXg4mFdJQj1NdBdCkszNqWwLi569ouj4bZsZzlXSzIg2NNUHK2QL1nxLUj0xCDKcmg3oyEUy2gP4UCCQgRte8VwUQSEkEUhrHwWTijibAPVl0MJquDqaoiw2G4eYXwlXB4l7YzW207px8longAIoynFVHAqEzf6MJj8HH06iG5iuZe7D8DXPp0FeUjvrky-UdPa9kGTm4=')
+SESSION_STRING = os.environ.get('SESSION_STRING', '1BVtsOGQBu4H0seDsHhtXLTYRzHkXXcY4enPhhxnW5JuIiJFmH_hpZ0EM7g-AcJWk6CZrdNgrYnmTGS0bJx7tQya2vtUViZgV0rOlqsttpbWLDcbULDhErcTSXPcNGmayyQRe9jeG19SAvlxldxwl8LhaiRaz1mDi_nshXMzNUBltgqsVMpWAXFgjklcxoq61mA-3_cyjAe1FQiyc8zbbkF82RrtV8I-rE39imz228KqjeKwBmO_6YSwgXzcHZv6l7lkHA42gcjcBaJgKDXft3Utne3dF3t3gxLYBhQ30-Di_tlRNMFEAZjn9ZmiW9RnZ4V-dl8vywanT6zEtvJPHZfEjhlWzVhM=')
 
 # Create new event loop
 loop = asyncio.new_event_loop()
