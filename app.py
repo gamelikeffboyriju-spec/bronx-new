@@ -13,7 +13,7 @@ app = Flask(__name__)
 # CONFIGURATION
 # ============================================
 API_ID = int(os.environ.get('API_ID', '33396172'))
-API_HASH = os.environ.get('API_HASH', 'e62d3ab368bd474005cf88e9d59ffbf7)
+API_HASH = os.environ.get('API_HASH', 'e62d3ab368bd474005cf88e9d59ffbf7')
 SESSION_STRING = os.environ.get('SESSION_STRING', '1BVtsOJUBu0k25N9PeIroOvauUGz-jOaiAUZaZA0SZ4Njbiip4pPZhnw10n3w272e7nKg2I7QY_v3fzeOQ7Li3hbN_jil6BIdt7w7lkht5z5GfEnxe7h46Pst3ovOslkFEcjCo539GMX-4fU2rSKm6aRaDoaaAUiNZU5hedOCLc3q4IU6lc4VJ-wmy2QKuEYUcLlEK_ckrPf3NLFRN-_N0sEHP7yJd_qgPVpHAqM5EhltuEgOTN7TJ3LN_aXiNB4bnyW9Ci9uGQvd2ONoVKrpERGivE_mJKXEDSEYltdsjY3Tkc08QQzVQensVIt1_fE2H3jV4l7k1KSzKutx2UjiF9ryiCqunJQ=')
 
 # Cache only - NO rate limits
