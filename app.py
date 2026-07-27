@@ -12,9 +12,9 @@ app = Flask(__name__)
 # ============================================
 # CONFIGURATION
 # ============================================
-API_ID = int(os.environ.get('API_ID', '33396172'))
-API_HASH = os.environ.get('API_HASH', 'e62d3ab368bd474005cf88e9d59ffbf7')
-SESSION_STRING = os.environ.get('SESSION_STRING', '1BVtsOJUBu0k25N9PeIroOvauUGz-jOaiAUZaZA0SZ4Njbiip4pPZhnw10n3w272e7nKg2I7QY_v3fzeOQ7Li3hbN_jil6BIdt7w7lkht5z5GfEnxe7h46Pst3ovOslkFEcjCo539GMX-4fU2rSKm6aRaDoaaAUiNZU5hedOCLc3q4IU6lc4VJ-wmy2QKuEYUcLlEK_ckrPf3NLFRN-_N0sEHP7yJd_qgPVpHAqM5EhltuEgOTN7TJ3LN_aXiNB4bnyW9Ci9uGQvd2ONoVKrpERGivE_mJKXEDSEYltdsjY3Tkc08QQzVQensVIt1_fE2H3jV4l7k1KSzKutx2UjiF9ryiCqunJQ=')
+API_ID = int(os.environ.get('API_ID', '21230129'))
+API_HASH = os.environ.get('API_HASH', 'a88b2ec836c8a4038b24239fc14ecc80')
+SESSION_STRING = os.environ.get('SESSION_STRING', '1BVtsOKQBu3CWVjR9dpw0NQG9Fx-_iTjIU1XEoENc9mQ4QN_mGZFIyPY5SZhxPG4yM7Mj4W3sHEKH1MLFpu8xZIHvle9u0Jwi8S3zn8BKbdYD534FcEs_puSmHsd8up-s46qlWgP-4lu_JfUoNNZovoDXNQjCa5_RmHCidDxhcXGNQGYpyhcnVH9KVs2q2Xwy9pdM-3T9cCbljqEtXcsmaU_wVzys1QioTqPRUMO8Tl8nbidjw6WrScP1S2vbRvwa22pAVtU4FXyphUh9Yp-ASCKnwUpCmDAUxNuDM_PT3BKg0D7FwxvnsWTDv0IG_iuVNOiKYxmbtZmSm2-XOjQJwO2Lqfvuiow=')
 
 # Cache only - NO rate limits
 cache = {}
